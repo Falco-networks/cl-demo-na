@@ -1,0 +1,10 @@
+- name: Configure hostname on switch
+  hosts: all
+
+  tasks:
+  - name: Set hostnames
+    nclu:
+        commit: true
+        description: "Set hostnames"
+        commands:
+            - add hostname {{ hostname }}
